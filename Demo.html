@@ -1,0 +1,193 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flood Warning System — Demo</title>
+   <link rel="stylesheet" href="style-cn.css"/>
+  <meta name="description" content="Demo layout for a Flood Warning System: sensors → server → prediction → alerts. CSS will be applied separately." />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Flood Warning System</h1>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#live" class="nav-link">Live Demo</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+<div class="hero-container">
+  <section id="hero">
+    <div class="hero-content">
+      <h2 class="hero-title">Real-time Flood Detection & Alerts</h2>
+      <p class="hero-lead">
+        This demo shows the flow: <br>
+        <strong>rainfall/river-level sensors → server → prediction → alerts</strong>.
+        Replace placeholders with real data in production.
+      </p>
+      <p><a href="#live" class="cta-button">Try Live Demo</a></p>
+    </div>
+  </section>
+
+  <section id="quick">
+    <div class="hero-div">
+      <h3 class="quick-flow-title">Quick Flow</h3>
+      <ol class="quick-flow-list">
+        <li>Sensors measure rainfall & river level.</li>
+        <li>Data sent to server periodically.</li>
+        <li>Prediction checks overflow risk.</li>
+        <li>Alerts sent to authorities & residents.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+
+
+
+    <!-- Hero -->
+    <!-- <section id="hero" class="hero">
+      <div class="hero-content">
+        <h2 class="hero-title">Real-time Flood Detection &amp; Alerts</h2>
+        <p class="hero-lead">This demo shows the flow: <br><strong>rainfall/river-level sensors → server → prediction → alerts</strong>. Replace placeholders with real data in production.</p>
+        <p><a href="#live" class="cta-button">Try Live Demo</a></p>
+      </div>
+      </section>
+    <section id="quick" class="quick">
+      <div class="hero-div">
+        <h3 class="quick-flow-title">Quick Flow</h3>
+        <ol class="quick-flow-list">
+          <li>Sensors measure rainfall &amp; river level.</li>
+          <li>Data sent to server periodically.</li>
+          <li>Prediction checks overflow risk.</li>
+          <li>Alerts sent to authorities &amp; residents.</li>
+        </ol>
+    </div>
+    </section> -->
+
+    <!-- How it works -->
+    <section id="how" class="how-it-works">
+      <h2>How the Flood Warning System Works</h2>
+      <div class="cards">
+        <article class="card">
+          <h4 class="card-title">Sensors</h4>
+          <p class="card-text">Rainfall gauges and river-level sensors collect measurements at intervals and forward them to a gateway.</p>
+        </article>
+
+        <article class="card">
+          <h4 class="card-title">Server &amp; Prediction</h4>
+          <p class="card-text">The server aggregates readings and runs prediction/threshold checks to detect overflow risk.</p>
+        </article>
+
+        <article class="card">
+          <h4 class="card-title">Alerting</h4>
+          <p class="card-text">If risk is detected, alerts are dispatched via SMS, apps, sirens or local broadcast systems.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Live Demo (structure only) -->
+    <section id="live" class="live-demo">
+      <div class="live-grid">
+        <div class="dashboard">
+          <h3 class="dashboard-title">Live Sensor Simulation</h3>
+          <p class="dashboard-desc">Simulated dashboard — adjust controls to change readings (client-side simulation or replace with API).</p>
+          
+          <div class="metrics">
+            <div class="metric-flex">
+            <div class="metric-rainfall">
+              <label for="rain-value">Rainfall (mm/hr)</label>
+              <div id="rain-value" class="metric-value">0</div>
+            </div>
+
+            <div class="metric-river-level">
+              <label for="level-value">River Level (m)</label>
+              <div id="level-value" class="metric-value">0.00</div>
+            </div>
+            </div>
+          
+          <div class="controls">
+            <label for="intensity">Simulate Rain Intensity</label>
+            <input id="intensity" name="intensity" type="range" min="0" max="100" value="10" />
+            <div class="control-buttons">
+              <button id="start" type="button" class="btn">Start Auto</button>
+              <button id="stop" type="button" class="btn">Stop</button>
+            </div>
+          </div>
+          </div>
+
+
+          <div class="prediction">
+            <h4>Prediction Status</h4>
+            <div id="prediction" class="prediction-status">Normal</div>
+          </div>
+
+          <div class="alerts">
+            <h4>Alert Log</h4>
+            <ul id="alert-log" class="alert-log"></ul>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div id="alert-banner" class="alert-banner" aria-live="assertive" role="status"></div>
+
+          <div class="system-info">
+            <h3>System Info</h3>
+            <p>Server: <span id="server-name">Demo Local</span></p>
+            <p>Last sync: <span id="last-sync">—</span></p>
+            <p>Threshold (river level): <span id="threshold">3.50 m</span></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Example Flow -->
+    <section class="example-flow">
+      <h3>Example Flow </h3>
+      <ol class="steps">
+        <li>Rainfall and river-level sensors detect heavy rain and rising water.</li>
+        <li>Data is transmitted to a server.</li>
+        <li>Prediction software checks if the river may overflow.</li>
+        <li>If yes, alerts are sent to nearby villages and authorities.</li>
+        <li>Evacuation can be started before flooding occurs.</li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h3>Contact </h3>
+      <form id="contact-form" class="contact-form" action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <div class="form-row">
+          <button id="send" type="submit" class="btn-primary">Send</button>
+        </div>
+      </form>
+    </section>
+<script src="simulation.js"></script>
+  </main>
+
+   <footer class="site-footer">
+  </footer> 
+<script src="simulation.js"></script>
+</body>
+</html>
